@@ -7,6 +7,8 @@ import { AddAnimalComponent } from './add-animal/add-animal.component';
 import { AddProductComponent } from "./add-product/add-product.component";
 import { EditAnimalComponent } from "./edit-animal/edit-animal.component";
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { AddUserComponent } from "./add-user/add-user.component";
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 const routes: Routes = [
 
@@ -42,6 +44,14 @@ const routes: Routes = [
   {
     path: "edit-product",
     component: EditProductComponent
+  },
+  {
+    path: "add-user",
+    component: AddUserComponent
+  },
+  {
+    path: "edit-user",
+    component: EditUserComponent
   }
 
 

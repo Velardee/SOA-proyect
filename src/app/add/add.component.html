@@ -26,7 +26,7 @@
 
 
 <section>
-    <mat-grid-list cols="2" rowHeight="400px">
+    <mat-grid-list cols="3" rowHeight="400px">
         <mat-grid-tile
         [colspan]="1"
         [rowspan]="1">
@@ -56,6 +56,23 @@
             <mat-card-content>
                 <div class="text">
                     <span>Producto</span>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1">
+        <mat-card class="clickable" [routerLink]="['/add-user']">
+            <mat-card-header>
+                <div class="crop-image">
+                    <img src="../../assets/user.svg" alt="">
+                </div>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="text">
+                    <span>Usuario</span>
                 </div>
             </mat-card-content>
         </mat-card>

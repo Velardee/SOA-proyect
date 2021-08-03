@@ -25,6 +25,9 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { EditAnimalComponent } from './edit-animal/edit-animal.component';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTabsModule} from '@angular/material/tabs';
+import { AddUserComponent } from './add-user/add-user.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 
 @NgModule({
@@ -37,7 +40,9 @@ import { HttpClientModule } from '@angular/common/http';
     AddProductComponent,
     EditProductComponent,
     EditAnimalComponent,
-    DeleteModalComponent
+    DeleteModalComponent,
+    AddUserComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +59,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatTabsModule,
     BrowserAnimationsModule,
     NgbModule,
   ],

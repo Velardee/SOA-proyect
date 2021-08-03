@@ -14,15 +14,24 @@ export class InicioComponent implements OnInit {
   constructor( private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.getAnimal();
+    // this.getAnimal();
+    this.getAnimalV2();
   }
 
-   getAnimal(): void{
-    const urlApi = "http://localhost:4000/getAll";
-    this.http.get(urlApi).subscribe((data: any) => {
-      this.animals = data.body.Items;
-      console.log(this.animals)
-    });
+  //  getAnimal(): void{
+  //   const urlApi = 'http://localhost:4000/getAll';
+  //   this.http.get(urlApi).subscribe((data: any) => {
+  //     this.animals = data.body.Items;
+  //     console.log(this.animals)
+  //   });
+  // }
+
+  async getAnimalV2() {
+    const urlApi = 'http://localhost:4000/getAll';
+    const data: any = await this.http.get(urlApi).toPromise();
+    this.animals = data.Items;
+    console.log(this.animals)
+    return data;
   }
 
 }

@@ -1,5 +1,5 @@
 <mat-toolbar>
-    <button mat-icon-button [routerLink]="['/inicio']">
+    <button mat-icon-button [routerLink]="['/add']">
         <mat-icon>
             reply
         </mat-icon>
@@ -21,28 +21,24 @@
                 <input matInput name="nombre" id="">
             </mat-form-field>
             <mat-form-field>
-                <mat-label>Categoria</mat-label>
-                <input matInput name="categoria" id="">
+                <mat-label>Apellido</mat-label>
+                <input matInput name="apellido" id="">
             </mat-form-field>
             <mat-form-field>
-                <mat-label>Descripción</mat-label>
-                <input matInput name="descripcion" id="">
+                <mat-label>Email</mat-label>
+                <input matInput name="email" id="">
             </mat-form-field>
             <mat-form-field>
-                <mat-label>Url de la imagen</mat-label>
-                <input matInput name="imagen" id="">
-            </mat-form-field>
-
-            <mat-form-field>
-                <mat-label>Precio</mat-label>
-                <input matInput name="precio" id="" type="number">
+                <mat-label>Contraseña</mat-label>
+                <input matInput name="password" id="" type="password">
             </mat-form-field>
 
             <div class="containerButton"> 
                 <button mat-raised-button class="agregar" 
-                matTooltip="Editar Producto"
-                matTooltipHideDelay="100">
-                    Editar
+                matTooltip="Agregar un nuevo usuario"
+                matTooltipHideDelay="100"
+                (click)="submitProduct ()">
+                    Agregar
                 </button>
             </div>
         </form>

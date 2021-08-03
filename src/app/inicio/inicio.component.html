@@ -5,58 +5,199 @@
     </div>
 </mat-toolbar>
 
-<section>
-    <mat-grid-list cols="3" rowHeight="150px">
-        <mat-grid-tile
-        [colspan]="1"
-        [rowspan]="1">
-        </mat-grid-tile>
-        <mat-grid-tile
-        [colspan]="1"
-        [rowspan]="1">
-            <button mat-fab
-                class="buttonAdd"
-                matTooltip="Agregar"
-                matTooltipHideDelay="100"
-                [routerLink]="['/add']">
-                <mat-icon>add</mat-icon>
-            </button>
-        </mat-grid-tile>
-    </mat-grid-list>
-</section>
 
 <section>
-    <mat-grid-list cols="2" rowHeight="400px">
-        <mat-grid-tile
-            [colspan]="1"
-            [rowspan]="1">
-            <mat-card>
-                <mat-card-header>
-                    <div class="crop-image">
-                        <img mat-card-image src="https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/59bbb29c5bafe878503c9872/husky-siberiano-bosque.jpg" alt="">
-                    </div>
-                </mat-card-header>
-                <mat-card-content>
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="Animales">
+            <section>
+                <mat-grid-list cols="3" rowHeight="150px">
+                    <mat-grid-tile
+                    [colspan]="1"
+                    [rowspan]="1">
+                    </mat-grid-tile>
+                    <mat-grid-tile
+                    [colspan]="1"
+                    [rowspan]="1">  
+                        <button mat-fab
+                            class="buttonAdd"
+                            matTooltip="Agregar"
+                            matTooltipHideDelay="100"
+                            [routerLink]="['/add']">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </section>
+            <section>
+                <mat-grid-list cols="2" rowHeight="400px">
+                    <mat-grid-tile
+                        [colspan]="1"
+                        [rowspan]="1">
+                        <mat-card >
+                            <mat-card-header>
+                                <div class="crop-image">
+                                    <img mat-card-image  alt="">
+                                </div>
+                            </mat-card-header>
+                            <mat-card-content>
+                                <mat-card-title>
+                                    
+                                </mat-card-title>
+                                <mat-card-subtitle>
+                                
+                                </mat-card-subtitle>
+                            </mat-card-content>
+                            <mat-card-actions>
+                                <button mat-icon-button
+                                    matTooltip="Editar"
+                                    matTooltipHideDelay="100"
+                                    [routerLink]="['/edit-animal']"
+                                >
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                                <button mat-icon-button 
+                                    color="warn"
+                                    matTooltip="Eliminar"
+                                    matTooltipHideDelay="100"
+                                >
+                                    <mat-icon>
+                                        delete
+                                    </mat-icon>
+                                </button>
+                            </mat-card-actions>
+                        </mat-card>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </section>
+        </mat-tab>
 
-                </mat-card-content>
-                <mat-card-actions>
-                    <button mat-icon-button
-                        matTooltip="Editar"
-                        matTooltipHideDelay="100"
-                    >
-                        <mat-icon>edit</mat-icon>
-                    </button>
-                    <button mat-icon-button 
-                        color="warn"
-                        matTooltip="Eliminar"
-                        matTooltipHideDelay="100"
-                    >
-                        <mat-icon>
-                            delete
-                        </mat-icon>
-                    </button>
-                </mat-card-actions>
-            </mat-card>
-        </mat-grid-tile>
-    </mat-grid-list>
+
+        <mat-tab label="Productos">
+            <section>
+                <mat-grid-list cols="3" rowHeight="150px">
+                    <mat-grid-tile
+                    [colspan]="1"
+                    [rowspan]="1">
+                    </mat-grid-tile>
+                    <mat-grid-tile
+                    [colspan]="1"
+                    [rowspan]="1">  
+                        <button mat-fab
+                            class="buttonAdd"
+                            matTooltip="Agregar"
+                            matTooltipHideDelay="100"
+                            [routerLink]="['/add']">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </section>
+            <section>
+                <mat-grid-list cols="2" rowHeight="400px">
+                    <mat-grid-tile
+                        [colspan]="1"
+                        [rowspan]="1">
+                        <mat-card >
+                            <mat-card-header>
+                                <div class="crop-image">
+                                    <img mat-card-image  alt="">
+                                </div>
+                            </mat-card-header>
+                            <mat-card-content>
+                                <mat-card-title>
+                                    
+                                </mat-card-title>
+                                <mat-card-subtitle>
+                                
+                                </mat-card-subtitle>
+                            </mat-card-content>
+                            <mat-card-actions>
+                                <button mat-icon-button
+                                    matTooltip="Editar"
+                                    matTooltipHideDelay="100"
+                                    [routerLink]="['/edit-product']"
+                                >
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                                <button mat-icon-button 
+                                    color="warn"
+                                    matTooltip="Eliminar"
+                                    matTooltipHideDelay="100"
+                                >
+                                    <mat-icon>
+                                        delete
+                                    </mat-icon>
+                                </button>
+                            </mat-card-actions>
+                        </mat-card>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </section>
+        </mat-tab>
+
+
+        <mat-tab label="Usuarios">
+            <section>
+                <mat-grid-list cols="3" rowHeight="150px">
+                    <mat-grid-tile
+                    [colspan]="1"
+                    [rowspan]="1">
+                    </mat-grid-tile>
+                    <mat-grid-tile
+                    [colspan]="1"
+                    [rowspan]="1">  
+                        <button mat-fab
+                            class="buttonAdd"
+                            matTooltip="Agregar"
+                            matTooltipHideDelay="100"
+                            [routerLink]="['/add']">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </section>
+            <section>
+                <mat-grid-list cols="2" rowHeight="400px">
+                    <mat-grid-tile
+                        [colspan]="1"
+                        [rowspan]="1">
+                        <mat-card >
+                            <mat-card-header>
+                                <div class="crop-image">
+                                    <img mat-card-image  alt="">
+                                </div>
+                            </mat-card-header>
+                            <mat-card-content>
+                                <mat-card-title>
+                                    
+                                </mat-card-title>
+                                <mat-card-subtitle>
+                                
+                                </mat-card-subtitle>
+                            </mat-card-content>
+                            <mat-card-actions>
+                                <button mat-icon-button
+                                    matTooltip="Editar"
+                                    matTooltipHideDelay="100"
+                                    [routerLink]="['/edit-user']"
+                                >
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                                <button mat-icon-button 
+                                    color="warn"
+                                    matTooltip="Eliminar"
+                                    matTooltipHideDelay="100"
+                                >
+                                    <mat-icon>
+                                        delete
+                                    </mat-icon>
+                                </button>
+                            </mat-card-actions>
+                        </mat-card>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </section>
+        </mat-tab>
+      </mat-tab-group>
 </section>
+

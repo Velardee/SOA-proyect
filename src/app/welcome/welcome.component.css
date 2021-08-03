@@ -1,0 +1,40 @@
+.navBar{
+    background-color: #f7f3f3;
+    height: 8%;
+}
+
+.logo{
+    padding: 0.5% 0% 0% 1.5%;
+    font-weight: 500;
+}
+
+.logoName{
+    padding: 0px 5px 0px 0px;
+}
+
+.welcome{
+    padding: 7% 7% 1% 7%;
+}
+
+.welcomeText span{
+    font-size: 14pt;
+    font-weight: 500;
+}
+
+.crop-image{
+    display: block;
+    height: 300px;
+    width: 100%;
+}
+
+img{
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    object-position: center;
+}
+
+.button{
+    background-color: #ffbc5c;
+}
+

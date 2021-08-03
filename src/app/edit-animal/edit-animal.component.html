@@ -1,0 +1,47 @@
+<mat-toolbar>
+    <button mat-icon-button [routerLink]="['/add']">
+        <mat-icon>
+            reply
+        </mat-icon>
+    </button>
+    <div class="logocontainer">
+        <img class="logo" src="../../assets/logo.png" alt="">
+    </div>
+</mat-toolbar>
+
+<section>
+    <mat-grid-list cols="1" rowHeight="500px">
+        <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1">
+
+        <form action="">
+            <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input matInput name="nombre" id="">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Animal</mat-label>
+                <input matInput name="animal" id="">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Descripción</mat-label>
+                <input matInput name="descripcion" id="">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Url de la imagen</mat-label>
+                <input matInput name="imagen" id="">
+            </mat-form-field>
+
+            <div class="containerButton"> 
+                <button mat-raised-button class="agregar" 
+                matTooltip="Agregar un nuevo animal"
+                matTooltipHideDelay="100">
+                    Agregar
+                </button>
+            </div>
+        </form>
+
+        </mat-grid-tile>
+    </mat-grid-list>
+</section>

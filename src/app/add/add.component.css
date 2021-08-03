@@ -1,0 +1,42 @@
+.logocontainer{
+    width: 100%;
+}
+
+.logo {
+    float: right;
+}
+
+.crop-image{
+    display: block;
+    height: 300px;
+    width: 100%;
+}
+
+.crop-image img{
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    object-position: center;
+}
+
+.text {
+    text-align: center;
+    padding: 4%;
+    font-weight: 500;
+}
+
+.mat-card-header-text {
+    padding: 3% !important;
+}
+
+span {
+    font-size: 18pt;
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+.clickable:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}

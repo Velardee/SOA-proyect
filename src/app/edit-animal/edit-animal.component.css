@@ -1,0 +1,21 @@
+.logocontainer{
+    width: 100%;
+}
+
+.logo {
+    float: right;
+}
+
+form {
+    display: grid;
+    width: 50%;
+}
+
+.containerButton{
+    text-align: center;
+}
+
+.agregar {
+    background-color: #918291;
+    color: white;
+}

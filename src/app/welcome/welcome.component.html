@@ -1,0 +1,35 @@
+<section class="welcome">
+    <mat-grid-list cols="2" rowHeight="300px">
+        <mat-grid-tile
+            [colspan]="1"
+            [rowspan]="1">
+            <div class="welcomeText">
+                <span>Bienvenido a Petstore</span>
+                <p>Una plataforma para llevar el control de tus animales y productos.</p>
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile
+            [colspan]="1"
+            [rowspan]="1">
+            <div class="crop-image">
+                <img src="../../assets/animal.svg" alt="">
+            </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-grid-list cols="3" rowHeight="100px">
+        <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1">
+        </mat-grid-tile>
+        <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1">
+            <button 
+            mat-flat-button 
+            color="warn" 
+            class="button"
+            [routerLink]="['/inicio']"> Empezar</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+</section>

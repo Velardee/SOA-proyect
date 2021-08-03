@@ -1,0 +1,64 @@
+<mat-toolbar>
+    <button mat-icon-button [routerLink]="['/inicio']">
+        <mat-icon>
+            reply
+        </mat-icon>
+    </button>
+    <div class="logocontainer">
+        <img class="logo" src="../../assets/logo.png" alt="">
+    </div>
+</mat-toolbar>
+
+<mat-grid-list cols="3" rowHeight="100px">
+    <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1"
+    >
+    </mat-grid-tile>
+
+    <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1"
+    >
+    <span>¿Qué deseas agregar?</span>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<section>
+    <mat-grid-list cols="2" rowHeight="400px">
+        <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1">
+        <mat-card [routerLink]="['/add-animal']" class="clickable">
+            <mat-card-header>
+                <div class="crop-image">
+                    <img src="../../assets/animal_bird.svg" alt="">
+                </div>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="text">
+                    <span>Animal</span>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1">
+        <mat-card class="clickable" [routerLink]="['/add-product']">
+            <mat-card-header>
+                <div class="crop-image">
+                    <img src="../../assets/product.svg" alt="">
+                </div>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="text">
+                    <span>Producto</span>
+                </div>
+            </mat-card-content>
+        </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</section>

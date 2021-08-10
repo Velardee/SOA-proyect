@@ -28,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatTabsModule} from '@angular/material/tabs';
 import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatTabsModule,
+    MatSnackBarModule,
     BrowserAnimationsModule,
     NgbModule,
   ],

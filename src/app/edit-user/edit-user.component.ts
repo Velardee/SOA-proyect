@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AnimalService } from '../services/animal.service';
+
 @Component({
   selector: 'app-edit-user',
   templateUrl: './edit-user.component.html',
@@ -7,9 +11,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditUserComponent implements OnInit {
 
-  constructor() { }
+  currentUser = {
+    nameU: '',
+    lastName: '',
+    email: '',
+    password: '',
+    id: ''
+  };
+
+  constructor(private http: HttpClient,
+              private router: Router,
+              private activeRoute: ActivatedRoute,
+              public service: AnimalService) { }
 
   ngOnInit(): void {
+    this.getUser(this.activeRoute.snapshot.paramMap.get('id'));
+  }
+
+  getUser(id: any){
+    this.service.getUser(id)
+    .subscribe(
+      data => {
+        console.log(data, id);
+      }, error => {
+        console.log(error);
+      });
   }
 
 }

@@ -38,11 +38,11 @@ const routes: Routes = [
     component: AddProductComponent
   },
   {
-    path: "edit-animal",
+    path: "edit-animal/:nameA",
     component: EditAnimalComponent
   },
   {
-    path: "edit-product",
+    path: "edit-product/:producto",
     component: EditProductComponent
   },
   {
@@ -50,7 +50,7 @@ const routes: Routes = [
     component: AddUserComponent
   },
   {
-    path: "edit-user",
+    path: "edit-user/:id",
     component: EditUserComponent
   }
 

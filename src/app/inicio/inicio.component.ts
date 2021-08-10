@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Animal } from '../models/animal';
+import { Animal, User, Product } from '../models/animal';
+import { AnimalService } from "../services/animal.service";
 
 @Component({
   selector: 'app-inicio',
@@ -10,27 +11,51 @@ import { Animal } from '../models/animal';
 export class InicioComponent implements OnInit {
 
   animals: Animal[] = [];
+  users: User[] = [];
+  products: Product[] = [];
+  urlApi = 'http://localhost:4000/';
 
-  constructor( private http: HttpClient) { }
+  constructor( private http: HttpClient,
+              public service: AnimalService) { }
 
   ngOnInit(): void {
-    // this.getAnimal();
-    this.getAnimalV2();
+    this.getAnimals();
+    this.getUsers();
+    this.getProducts();
   }
 
-  //  getAnimal(): void{
-  //   const urlApi = 'http://localhost:4000/getAll';
-  //   this.http.get(urlApi).subscribe((data: any) => {
-  //     this.animals = data.body.Items;
-  //     console.log(this.animals)
-  //   });
-  // }
-
-  async getAnimalV2() {
-    const urlApi = 'http://localhost:4000/getAll';
-    const data: any = await this.http.get(urlApi).toPromise();
+  async getAnimals() {
+    const component = this.urlApi + 'getAll';
+    const data: any = await this.http.get(component).toPromise();
     this.animals = data.Items;
-    console.log(this.animals)
+    console.log(this.animals);
+    return data;
+  }
+
+  /*productos*/
+
+  async getProducts() {
+    const component = this.urlApi + 'getAllProducts';
+    const data: any = await this.http.get(component).toPromise();
+    this.products = data.Items;
+    console.log(this.products);
+    return data;
+  }
+
+  /*Usuarios*/ 
+
+  async getUsers() {
+    const component = this.urlApi + 'getAllUsers';
+    const data: any = await this.http.get(component).toPromise();
+    this.users = data.Items;
+    console.log(this.users);
+    return data;
+  }
+
+  async deleteUser(id: string){
+    let component = `${this.urlApi + 'deleteUser'}/${id}`;
+    const data: any = await this.http.delete(component).toPromise();
+    this.getUsers();
     return data;
   }
 

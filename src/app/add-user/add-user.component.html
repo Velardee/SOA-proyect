@@ -18,26 +18,26 @@
         <form action="">
             <mat-form-field>
                 <mat-label>Nombre</mat-label>
-                <input matInput name="nombre" id="">
+                <input matInput name="nombre" id="" [(ngModel)]="user.nameU">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Apellido</mat-label>
-                <input matInput name="apellido" id="">
+                <input matInput name="apellido" id="" [(ngModel)]="user.lastName">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Email</mat-label>
-                <input matInput name="email" id="">
+                <input matInput name="email" id="" [(ngModel)]="user.email">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Contraseña</mat-label>
-                <input matInput name="password" id="" type="password">
+                <input matInput name="password" id="" type="password" [(ngModel)]="user.password">
             </mat-form-field>
 
             <div class="containerButton"> 
                 <button mat-raised-button class="agregar" 
                 matTooltip="Agregar un nuevo usuario"
                 matTooltipHideDelay="100"
-                (click)="submitProduct ()">
+                (click)="saveUser()">
                     Agregar
                 </button>
             </div>

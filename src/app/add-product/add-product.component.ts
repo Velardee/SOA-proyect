@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { AnimalService } from '../services/animal.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Product } from '../models/animal';
 
 
 @Component({
@@ -12,15 +15,21 @@ import { Router } from "@angular/router";
 export class AddProductComponent implements OnInit {
   
   form: FormGroup;
-  name = "";
-  category = "";
-  description = "";
-  urlImg = "";
-  price = "";
+
+  product: Product = {
+    producto: "",
+    category: "",
+    description:"",
+    urlImg: "",
+    price: "",
+    sk: ""  
+  }
 
 
   constructor( private formBuilder: FormBuilder, 
-              private router: Router ) { 
+              private router: Router,
+              private service: AnimalService,
+              private snack: MatSnackBar) { 
 
     this.form = this.formBuilder.group({
       name: ["", [Validators.required, Validators.minLength(3)]],
@@ -35,8 +44,39 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
+   saveProduct(): void {
+    const data = {
+      producto: this.product.producto,
+      category: this.product.category,
+      urlImg: this.product.urlImg,
+      description: this.product.description,
+      price: this.product.price,
+      sk: this.product.sk
+    }
+
+    this.service.createProduct(data)
+    .subscribe(
+      res => {
+        console.log(res)
+        this.router.navigateByUrl("inicio");
+        this.openSnackBar();
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+
   submitProduct () {
     this.router.navigateByUrl("inicio");
+  }
+
+  openSnackBar(): void {
+    this.snack.open('Registro Guardado', '',{
+      duration: 2000,
+      panelClass: 'notif-success'
+    })
   }
 
 }

@@ -18,26 +18,26 @@
         <form action="">
             <mat-form-field>
                 <mat-label>Nombre</mat-label>
-                <input matInput name="nombre" id="">
+                <input matInput name="nombre" id="" [(ngModel)]="animal.nameA">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Animal</mat-label>
-                <input matInput name="animal" id="">
+                <input matInput name="animal" id="" [(ngModel)]="animal.animal">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Descripción</mat-label>
-                <input matInput name="descripcion" id="">
+                <input matInput name="descripcion" id="" [(ngModel)]="animal.description">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Url de la imagen</mat-label>
-                <input matInput name="imagen" id="">
+                <input matInput name="imagen" id="" [(ngModel)]="animal.urlImg">
             </mat-form-field>
 
             <div class="containerButton"> 
                 <button mat-raised-button class="agregar" 
                 matTooltip="Agregar un nuevo animal"
                 matTooltipHideDelay="100"
-                (click)="submitProduct()">
+                (click)="saveAnimal()">
                     Agregar
                 </button>
             </div>

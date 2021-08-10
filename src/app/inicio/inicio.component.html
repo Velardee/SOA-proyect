@@ -29,45 +29,46 @@
                 </mat-grid-list>
             </section>
             <section>
-                <mat-grid-list cols="2" rowHeight="400px">
-                    <mat-grid-tile
-                        [colspan]="1"
-                        [rowspan]="1">
-                        <mat-card >
-                            <mat-card-header>
-                                <div class="crop-image">
-                                    <img mat-card-image  alt="">
-                                </div>
-                            </mat-card-header>
-                            <mat-card-content>
-                                <mat-card-title>
-                                    
-                                </mat-card-title>
-                                <mat-card-subtitle>
-                                
-                                </mat-card-subtitle>
-                            </mat-card-content>
-                            <mat-card-actions>
-                                <button mat-icon-button
-                                    matTooltip="Editar"
-                                    matTooltipHideDelay="100"
-                                    [routerLink]="['/edit-animal']"
-                                >
-                                    <mat-icon>edit</mat-icon>
-                                </button>
-                                <button mat-icon-button 
-                                    color="warn"
-                                    matTooltip="Eliminar"
-                                    matTooltipHideDelay="100"
-                                >
-                                    <mat-icon>
-                                        delete
-                                    </mat-icon>
-                                </button>
-                            </mat-card-actions>
-                        </mat-card>
-                    </mat-grid-tile>
-                </mat-grid-list>
+                <div class="container">
+                    <div class="row col-xl-12">
+                            <mat-card
+                            class="col-xl-6"
+                            *ngFor="let animal of animals">
+                                <mat-card-header>
+                                    <div class="crop-image">
+                                        <img mat-card-image src="{{animal.urlImg}}"  alt="">
+                                    </div>
+                                </mat-card-header>
+                                <mat-card-content>
+                                    <mat-card-title>
+                                        {{animal.nameA}}
+                                    </mat-card-title>
+                                    <mat-card-subtitle>
+                                        {{animal.description}}
+                                    </mat-card-subtitle>
+                                </mat-card-content>
+                                <mat-card-actions>
+                                    <button mat-icon-button
+                                        matTooltip="Editar"
+                                        matTooltipHideDelay="100"
+                                        [routerLink]="['/edit-animal']"
+                                    >
+                                        <mat-icon>edit</mat-icon>
+                                    </button>
+                                    <button mat-icon-button 
+                                        color="warn"
+                                        matTooltip="Eliminar"
+                                        matTooltipHideDelay="100"
+                                        
+                                    >
+                                        <mat-icon>
+                                            delete
+                                        </mat-icon>
+                                    </button>
+                                </mat-card-actions>
+                            </mat-card>
+                    </div>
+                </div>
             </section>
         </mat-tab>
 
@@ -93,29 +94,29 @@
                 </mat-grid-list>
             </section>
             <section>
-                <mat-grid-list cols="2" rowHeight="400px">
-                    <mat-grid-tile
-                        [colspan]="1"
-                        [rowspan]="1">
-                        <mat-card >
+                <div class="container">
+                    <div class="row col-xl-12">
+                        <mat-card 
+                        class="col-xl-6"
+                        *ngFor="let product of products">
                             <mat-card-header>
                                 <div class="crop-image">
-                                    <img mat-card-image  alt="">
+                                    <img mat-card-image src="{{product.urlImg}}"  alt="">
                                 </div>
                             </mat-card-header>
                             <mat-card-content>
                                 <mat-card-title>
-                                    
+                                    {{product.producto}}
                                 </mat-card-title>
                                 <mat-card-subtitle>
-                                
+                                    {{product.price}}
                                 </mat-card-subtitle>
                             </mat-card-content>
                             <mat-card-actions>
                                 <button mat-icon-button
                                     matTooltip="Editar"
                                     matTooltipHideDelay="100"
-                                    [routerLink]="['/edit-product']"
+                                    [routerLink]="['/edit-product', product.producto]"
                                 >
                                     <mat-icon>edit</mat-icon>
                                 </button>
@@ -130,8 +131,8 @@
                                 </button>
                             </mat-card-actions>
                         </mat-card>
-                    </mat-grid-tile>
-                </mat-grid-list>
+                    </div>
+                </div>
             </section>
         </mat-tab>
 
@@ -157,29 +158,29 @@
                 </mat-grid-list>
             </section>
             <section>
-                <mat-grid-list cols="2" rowHeight="400px">
-                    <mat-grid-tile
-                        [colspan]="1"
-                        [rowspan]="1">
-                        <mat-card >
-                            <mat-card-header>
-                                <div class="crop-image">
-                                    <img mat-card-image  alt="">
-                                </div>
-                            </mat-card-header>
+                <div class="container">
+                    <div class="row col-xl-12">
+                        <mat-card 
+                        class="col-xl-6"
+                        *ngFor="let user of users">
                             <mat-card-content>
+                                <mat-card-header>
+                                    <div class="crop-image">
+                                        <img mat-card-image src="../../assets/newUser.svg"  alt="">
+                                    </div>
+                                </mat-card-header>
                                 <mat-card-title>
-                                    
+                                    {{user.nameU}}
                                 </mat-card-title>
                                 <mat-card-subtitle>
-                                
+                                    {{user.lastName}}
                                 </mat-card-subtitle>
                             </mat-card-content>
                             <mat-card-actions>
                                 <button mat-icon-button
                                     matTooltip="Editar"
                                     matTooltipHideDelay="100"
-                                    [routerLink]="['/edit-user']"
+                                    [routerLink]="['/edit-user/', user.id]"
                                 >
                                     <mat-icon>edit</mat-icon>
                                 </button>
@@ -187,6 +188,7 @@
                                     color="warn"
                                     matTooltip="Eliminar"
                                     matTooltipHideDelay="100"
+                                    (click)="deleteUser(user.id)"
                                 >
                                     <mat-icon>
                                         delete
@@ -194,8 +196,8 @@
                                 </button>
                             </mat-card-actions>
                         </mat-card>
-                    </mat-grid-tile>
-                </mat-grid-list>
+                    </div>
+                </div>
             </section>
         </mat-tab>
       </mat-tab-group>

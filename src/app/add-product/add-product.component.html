@@ -18,30 +18,30 @@
         <form [formGroup]="form">
             <mat-form-field>
                 <mat-label>Nombre</mat-label>
-                <input matInput name="nombre" id="" [(ngModel)]="name" formControlName="name">
+                <input matInput name="nombre" id="" [(ngModel)]="product.producto" formControlName="name">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Categoria</mat-label>
-                <input matInput name="categoria" id="" [(ngModel)]="category" formControlName="category">
+                <input matInput name="categoria" id="" [(ngModel)]="product.category" formControlName="category">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Descripción</mat-label>
-                <input matInput name="descripcion" id="" [(ngModel)]="description" formControlName="description">
+                <input matInput name="descripcion" id="" [(ngModel)]="product.description" formControlName="description">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Url de la imagen</mat-label>
-                <input matInput name="imagen" id="" [(ngModel)]="urlImg" formControlName="urlImg">
+                <input matInput name="imagen" id="" [(ngModel)]="product.urlImg" formControlName="urlImg">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Precio</mat-label>
-                <input matInput name="precio" id="" type="number" [(ngModel)]="price" formControlName="price">
+                <input matInput name="precio" id="" type="number" [(ngModel)]="product.price" formControlName="price">
             </mat-form-field>
 
             <div class="containerButton"> 
                 <button mat-raised-button class="agregar" 
                 matTooltip="Agregar un nuevo producto"
                 matTooltipHideDelay="100"
-                (click)="submitProduct()">
+                (click)="saveProduct()">
                     Agregar
                 </button>
             </div>

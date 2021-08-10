@@ -18,31 +18,38 @@
         <form action="">
             <mat-form-field>
                 <mat-label>Nombre</mat-label>
-                <input matInput name="nombre" id="">
+                <input matInput name="nombre" id=""  [(ngModel)]="currentProduct[0].producto">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Categoria</mat-label>
-                <input matInput name="categoria" id="">
+                <input matInput name="categoria" id="" [(ngModel)]="currentProduct[0].category">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Descripción</mat-label>
-                <input matInput name="descripcion" id="">
+                <input matInput name="descripcion" id="" [(ngModel)]="currentProduct[0].description">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Url de la imagen</mat-label>
-                <input matInput name="imagen" id="">
+                <input matInput name="imagen" id="" [(ngModel)]="currentProduct[0].urlImg">
             </mat-form-field>
 
             <mat-form-field>
                 <mat-label>Precio</mat-label>
-                <input matInput name="precio" id="" type="number">
+                <input matInput name="precio" id="" type="number" [(ngModel)]="currentProduct[0].price">
             </mat-form-field>
 
             <div class="containerButton"> 
                 <button mat-raised-button class="agregar" 
                 matTooltip="Editar Producto"
-                matTooltipHideDelay="100">
+                matTooltipHideDelay="100"
+                (click)="updateProduct()">
                     Editar
+                </button>
+                <button mat-raised-button class="agregar" 
+                matTooltip="Eliminar Producto"
+                matTooltipHideDelay="100"
+                (click)="deleteProduct()">
+                    Eliminar
                 </button>
             </div>
         </form>
